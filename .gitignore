@@ -1,0 +1,75 @@
+# ==================== #
+# 虚幻引擎核心目录 (必须带斜杠) #
+# ==================== #
+# 斜杠 / 表示忽略整个目录
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/
+
+#忽略资产#
+Content/Asset/
+
+# **/ 表示在任何子目录下都要忽略
+**/Win64/
+**/Android/
+**/IOS/
+**/Linux/
+**/Mac/
+**/PS4/
+**/XboxOne/
+
+# ==================== #
+# IDE和编辑器文件 #
+# ==================== #
+.vscode/
+.vs/
+.idea/
+*.code-workspace
+
+# ==================== #
+# Visual Studio 项目文件 #
+# ==================== #
+*.VC.db
+*.VC.opendb
+*.opensdf
+*.sdf
+*.sln
+*.suo
+*.xcodeproj
+*.xcworkspace
+
+# ==================== #
+# C++ 编译产物 #
+# ==================== #
+*.obj
+*.pdb
+*.ipdb
+*.iobj
+*.ilk
+*.exp
+*.lib
+*.pch
+Plugins/**/Binaries/
+Plugins/**/Intermediate/
+
+# ==================== #
+# 系统临时文件  #
+# ==================== #
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+*.cache
+
+# ==================== #
+# 其他引擎生成文件 #
+# ==================== #
+*.automation
+*.Backup
+CompiledScripts/
+Platforms/
+*.target
+*.proj
