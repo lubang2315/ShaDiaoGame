@@ -14,24 +14,24 @@ struct FGEDamageInfo
 
 	/*默认初始值*/
 	FGEDamageInfo(){}
-
-	/*发起者ASC*/
-	UPROPERTY()
-	UAbilitySystemComponent* SourceASC = nullptr;
 	
 	/*目标ASC*/
 	UPROPERTY()
 	UAbilitySystemComponent* TargetASC = nullptr;
 
+	/*击飞的敌人*/
+	UPROPERTY()
+	AActor* TargetActor = nullptr;
+
 	/*是否击飞敌人*/
 	UPROPERTY()
 	bool bIsHitFly = false;
 
-	/*击飞力度*/
+	/*击飞敌人的起点位置*/
 	UPROPERTY()
-	float HitFlyDegree = 0.f;
-
-	/*击飞角度*/
+	FVector HitSourceLocation = FVector::ZeroVector;
+	
+	/*击飞角度和力度*/
 	UPROPERTY()
 	FVector HitFlyAngle = FVector::ZeroVector;
 	
@@ -45,40 +45,40 @@ struct FGEContext_ShaDiaoGame :public FGameplayEffectContext
 
 public:
 
-	/*在GE上下文中存储目标ASC，是否击飞，击飞力度，击飞角度*/
-	void SetSourceASC(UAbilitySystemComponent* InASC){SourceASC = InASC; };
+	/*在GE上下文中存储目标ASC，是否击飞，击飞敌人起始位置，击飞角度和力度*/
 	void SetTargetASC(UAbilitySystemComponent* InASC){TargetASC = InASC; };
+	void SetTargetActor(AActor* InTargetActor){TargetActor = InTargetActor; };
 	void SetTheHitFly(bool InIsHitFly){bIsHitFly = InIsHitFly; };
-	void SetTheHitFlyDegree(float InHitFlyDegree){HitFlyDegree = InHitFlyDegree; };
+	void SetTheHitSourceLocation(FVector InHitSourceLocation){HitSourceLocation = InHitSourceLocation; };
 	void SetTheHitFlyAngle(FVector InHitFlyAngle){HitFlyAngle = InHitFlyAngle; };
 
-	/*获取目标ASC，是否击飞，击飞力度，击飞角度*/
-	UAbilitySystemComponent* GetSourceASC() const {return SourceASC; };
+	/*获取目标ASC，是否击飞，击飞敌人起始位置，击飞角度和力度*/
 	UAbilitySystemComponent* GetTargetASC() const {return TargetASC; };
+	AActor* GetTargetActor() const {return TargetActor; };
 	bool GetIsHitFly() const {return bIsHitFly; };
-	float GetHitFlyDegree() const {return HitFlyDegree; };
+	FVector GetHitSourceLocation() const {return HitSourceLocation; };
 	FVector GetHitFlyAngle() const {return HitFlyAngle; };
 	
 
 protected:
-
-	/*发起者ASC*/
-	UPROPERTY()
-	UAbilitySystemComponent* SourceASC = nullptr;
 	
 	/*目标ASC*/
 	UPROPERTY()
 	UAbilitySystemComponent* TargetASC = nullptr;
 
+	/*击飞的敌人*/
+	UPROPERTY()
+	AActor* TargetActor = nullptr;
+	
 	/*是否击飞敌人*/
 	UPROPERTY()
 	bool bIsHitFly = false;
 
-	/*击飞力度*/
+	/*击飞敌人的起点位置*/
 	UPROPERTY()
-	float HitFlyDegree = 0.f;
+	FVector HitSourceLocation = FVector::ZeroVector;
 
-	/*击飞角度*/
+	/*击飞角度和力度*/
 	UPROPERTY()
 	FVector HitFlyAngle = FVector::ZeroVector;
 
