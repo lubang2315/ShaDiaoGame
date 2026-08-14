@@ -8,7 +8,7 @@ public class ShaDiaoGame : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "GameplayTags", "GameplayAbilities", "GameplayTasks", "Niagara", "AIModule" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "GameplayTags", "GameplayAbilities", "GameplayTasks", "Niagara", "AIModule" , "CableComponent"});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { "AnimGraphRuntime", "AIModule"});
 
